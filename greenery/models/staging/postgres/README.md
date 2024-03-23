@@ -13,4 +13,4 @@ ONE_PURCHASES | TWO_PURCHASES | THREE_PLUS_PURCHASES
 ------------- | ------------- | -------------------
 25 | 28 | 71
      
-On average, how many unique sessions do we have per hour? **61.258621**
+On average, how many unique sessions do we have per hour? **16.327586**
