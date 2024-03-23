@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name:  stg_postgres_addresses
+    description: "User Address Metadata"
+  - name: stg_postgres_events
+    description: "Events and sessions by User"
+  - name: stg_postgres_order_items
+    description: "Orders Metadata"
+  - name: stg_postgres_orders
+    description: "Orders and Deliveries per User"
+  - name: stg_postgres_products
+    description: "Product Metadata"
+  - name: stg_postgres_promos
+    description: "Promo Metadata"
+  - name: stg_postgres_users
+    description: "User Metadata"
