@@ -11,6 +11,6 @@ SELECT
     SHIPPING_SERVICE,
     ESTIMATED_DELIVERY_AT,
     DELIVERED_AT,
-    `STATUS`
+    STATUS
 FROM 
     {{ source('postgres', 'orders') }}
