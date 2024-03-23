@@ -10,7 +10,8 @@ How many users have only made one purchase? Two purchases? Three+ purchases?
 
 ONE_PURCHASES | TWO_PURCHASES | THREE_PLUS_PURCHASES
 ------------- | ------------- | -------------------
-     25       |      28       |         71
+25 | 28 | 71
+     
 
 Note: you should consider a purchase to be a single order. In other words, if a user places one order for 3 products, they are considered to have made 1 purchase.
 
