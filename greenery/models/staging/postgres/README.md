@@ -59,7 +59,7 @@ FROM DEV_DB.DBT_CATHERINECHUSIGMACOMPUTINGCOM.STG_POSTGRES_ORDERS
 GROUP BY
     1
     )
-    ```
+```
      
 On average, how many unique sessions do we have per hour? **16.327586**
 
