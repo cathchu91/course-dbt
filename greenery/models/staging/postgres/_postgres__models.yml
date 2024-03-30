@@ -10,9 +10,6 @@ models:
   - name: stg_order_items
     description: A table highlighting quantity of products per order.
 
-  - name: stg_orders
-    description: A fact table of orders. Includes information on cost and shipping details.
-
   - name: stg_products
     description: A dimension table for product information regarding price and inventory.
 
