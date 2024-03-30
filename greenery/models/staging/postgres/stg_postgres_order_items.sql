@@ -1,6 +1,6 @@
-SELECT
-    ORDER_ID,
-    PRODUCT_ID,
-    QUANTITY
-FROM
+select
+      order_id
+    , product_id
+    , quantity
+from
     {{ source('postgres','order_items') }}

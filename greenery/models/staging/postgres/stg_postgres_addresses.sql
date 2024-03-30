@@ -1,8 +1,8 @@
-SELECT
-    ADDRESS_ID,
-    ADDRESS,
-    ZIPCODE,
-    STATE,
-    COUNTRY
-FROM 
+select
+      address_id
+    , address
+    , zipcode
+    , state
+    , country
+from 
     {{ source('postgres', 'addresses') }}
