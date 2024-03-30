@@ -1,4 +1,10 @@
-select 
+{{
+  config(
+    materialized='table'
+  )
+}}
+
+SELECT 
       user_id
     , first_name
     , last_name
@@ -7,5 +13,5 @@ select
     , user_created_at
     , user_updated_at
     , address_id
-from 
+FROM 
     {{ ref('stg_postgres_users') }}
