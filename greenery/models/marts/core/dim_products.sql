@@ -10,4 +10,4 @@ SELECT
     , product_price
     , product_inventory
 FROM 
-    {{ ref('stg_postgres_products') }}
+    {{ ref('stg_products') }}

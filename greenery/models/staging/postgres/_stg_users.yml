@@ -1,8 +1,8 @@
 version: 2
 
 models:
-  - name:  dim_users
-    description: Fact table containing users, their contact information and addresses.
+  - name:  stg_users
+    description: fact table of users information, including name and email. can be joined back to addresses
     columns:
       - name: user_id
         description: uuid for unique users
@@ -14,10 +14,5 @@ models:
       - name: email
       - name: phone_number
       - name: user_created_at
-      - name: user_created_date
       - name: user_updated_at
       - name: address_id
-      - name: address
-      - name: zipcode
-      - name: state
-      - name: country

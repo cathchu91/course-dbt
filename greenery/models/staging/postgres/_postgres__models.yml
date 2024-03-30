@@ -1,23 +1,20 @@
 version: 2
 
 models:
-  - name:  stg_postgres_addresses
+  - name:  stg_addresses
     description: Dimension table for addresses on platform.
 
-  - name: stg_postgres_events
+  - name: stg_events
     description: Fact table of events occurring on site. Information includes which page the event occured and if the event was associated with a product or order.
 
-  - name: stg_postgres_order_items
+  - name: stg_order_items
     description: A table highlighting quantity of products per order.
 
-  - name: stg_postgres_orders
+  - name: stg_orders
     description: A fact table of orders. Includes information on cost and shipping details.
 
-  - name: stg_postgres_products
+  - name: stg_products
     description: A dimension table for product information regarding price and inventory.
 
-  - name: stg_postgres_promos
+  - name: stg_promo_codes
     description: A dimension table for various promos, their discount amount and status.
-
-  - name: stg_postgres_users
-    description: A dimension table of users, their email and the date the user created at date. Can be joined with stg_postgres_addresses.

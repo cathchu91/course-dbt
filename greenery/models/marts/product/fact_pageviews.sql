@@ -14,6 +14,6 @@ SELECT
     , order_id
     , product_id
 FROM 
-    {{ ref('stg_postgres_events') }}
+    {{ ref('stg_events') }}
 WHERE
     event_type = 'page_view'
