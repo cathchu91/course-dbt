@@ -2,17 +2,24 @@ version: 2
 
 models:
   - name:  stg_users
-    description: fact table of users information, including name and email. can be joined back to addresses
+    description: fact table of users information, including name and email can be joined back to addresses
     columns:
       - name: user_id
-        description: uuid for unique users
+        description: UUID for each unique user on platform
         tests:
           - not_null
           - unique_values
       - name: first_name
+        description: First name of the user
       - name: last_name
+        description: Last name of the user
       - name: email
+        description: Email address of the user
       - name: phone_number
+        description: Phone number of the user
       - name: user_created_at
+        description: Timestamp the user was created
       - name: user_updated_at
+        description: Timestamp the user was last updated
       - name: address_id
+        description: Default delivery address for the user

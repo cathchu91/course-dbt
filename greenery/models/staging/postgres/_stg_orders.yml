@@ -1,23 +1,37 @@
 version: 2
 
 models:
+  
   - name: stg_orders
     description: A fact table of orders. Includes information on cost and shipping details.
     columns:
+      
       - name: order_id
-        description: order uuid identifier
+        description: UUID for each unique order on platform
         tests:
           - not_null
           - unique_values
-      - name: user_id
+      - name: user_id 
+        description: User Id of the user that placed this order
       - name: promo_code_id
+        description: Promo Id if any was used in the order
       - name: address_id
+        description: Delivery address for this order_cost
       - name: order_placed_at
+        description: Timestamp when the order was created
       - name: order_cost
+        description: Dollar amount of the items in the order
       - name: shipping_cost
+        description: Cost of shipping for the order
       - name: order_total
+        description: Total cost of the order including shipping
       - name: tracking_id
+        description: Tracking number for the order/package
       - name: shipping_service
+        description: Company that was used for the shipping
       - name: estimated_delivery_at
+        description: Estimated date of delivery
       - name: delivered_at
+        description: Actual timestamp of the delivery
       - name: status
+        description: Status of the order
