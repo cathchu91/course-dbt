@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name:  dim_products
+    description: product metadata
+    columns:
+      - name: product_id
+        description: unique key identifier for products
+        tests:
+          - not_null
+      - name: product_name
+      - name: product_price
+        description: the price of each product
+        tests:
+          - positive_values
+      - name: product_inventory

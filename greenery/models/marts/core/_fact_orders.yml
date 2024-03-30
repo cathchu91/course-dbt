@@ -1,0 +1,23 @@
+version: 2
+
+models: 
+  - name: fact_orders
+    description: A fact sheet of orders placed with key shipping details.
+    columns:
+      - name: order_id
+        description: the unique key for each order placed
+        tests: 
+          - not_null
+      - name: user_id
+        description: the uuid of the user who placed the order
+      - name: promo_id
+      - name: address_id
+      - name: order_created_at
+      - name: order_cost
+      - name: shipping_cost
+      - name: order_total
+      - name: tracking_id
+      - name: shipping_service
+      - name: estimated_delivery_at
+      - name: delivered_at
+      - name: status

@@ -1,15 +1,20 @@
 version: 2
 
 models:
-  - name:  dim_products
-    description: product metadata
+  - name:  dim_users
+    description: fact table of users information, including name and email. can be joined back to addresses
     columns:
-      - name: product_id
-        description: unique key identifier for products
+      - name: user_id
+        description: uuid for unique users
         tests:
           - not_null
-      - name: product_name
-      - name: product_price
-      - name: product_inventory
+          - unique_values
+      - name: first_name
+      - name: last_name
+      - name: email
+      - name: phone_number
+      - name: created_at
+      - name: updated_at
+      - name: address_id
 
 
