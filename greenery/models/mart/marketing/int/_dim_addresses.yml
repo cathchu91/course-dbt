@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name:  dim_addresses
+    description: user address metadata
+    columns:
+      - name: address_id
+      - name: address
+      - name: zipcode
+      - name: state
+      - name: country

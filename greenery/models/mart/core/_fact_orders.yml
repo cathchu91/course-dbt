@@ -12,18 +12,18 @@ models:
       - name: order_placed_at
       - name: order_total
       - name: order_cost
-      - name: status as order_status
+      - name: order_status
       - name: promo_code_id
       - name: promo_code_discount
       - name: user_id
-      - name: user_ name
+      - name: user_first_name
       - name: address_id
       - name: address
       - name: zipcode
       - name: state
       - name: country
       - name: shipping_service
-      - name: tracking_id as shipment_tracking_id
+      - name: shipment_tracking_id
       - name: shipping_cost
       - name: estimated_delivery_at
       - name: days_to_deliver

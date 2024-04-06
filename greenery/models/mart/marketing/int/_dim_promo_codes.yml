@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name:  dim_promo_codes
+    description: promotional codes
+    columns:
+      - name: promo_code_id
+      - name: promo_code_discount
+      - name: promo_code_status

@@ -6,8 +6,8 @@
 
 SELECT
       product_id
-    , product_name
-    , product_price
-    , product_inventory
+    , name as product_name
+    , price as product_price
+    , inventory as product_inventory
 FROM 
     {{ ref('stg_products') }}

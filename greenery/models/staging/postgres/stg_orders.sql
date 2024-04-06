@@ -1,9 +1,9 @@
 SELECT
       order_id
     , user_id
-    , promo_id as promo_code_id
+    , promo_id
     , address_id
-    , created_at as order_placed_at
+    , created_at
     , order_cost
     , shipping_cost
     , order_total

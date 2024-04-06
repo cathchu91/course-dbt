@@ -13,11 +13,11 @@ models:
           - unique_values
       - name: user_id 
         description: User Id of the user that placed this order
-      - name: promo_code_id
+      - name: promo_id
         description: Promo Id if any was used in the order
       - name: address_id
         description: Delivery address for this order_cost
-      - name: order_placed_at
+      - name: created_at
         description: Timestamp when the order was created
       - name: order_cost
         description: Dollar amount of the items in the order

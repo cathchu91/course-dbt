@@ -1,7 +1,7 @@
 SELECT
       product_id
-    , name as product_name
-    , price as product_price
-    , inventory as product_inventory
+    , name
+    , price
+    , inventory
 FROM 
     {{ source('postgres', 'products') }}
