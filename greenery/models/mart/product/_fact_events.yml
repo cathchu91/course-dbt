@@ -17,4 +17,3 @@ models:
       - name: event_type
       - name: order_id
       - name: product_id
-      - name: product_name

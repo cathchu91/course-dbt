@@ -13,9 +13,5 @@ SELECT
     , ev.event_type
     , ev.order_id
     , ev.product_id
-    , p.name as product_name
 FROM 
     {{ ref('stg_events') }} ev
-LEFT JOIN
-    {{ ref('stg_products') }} p 
-ON ev.product_id = p.product_id

@@ -4,46 +4,37 @@
   )
 }}
 
-with events AS (
-  SELECT * FROM {{ ref('fact_events') }}
-  ),
+with
 
-page_views as (
-    SELECT *, 1 as page_view FROM events WHERE event_type = 'page_view'
-    ),
+events as (
+	select * from {{ ref('stg_events') }}
+),
 
-add_to_cart as (
-    SELECT *, 1 as add_to_cart FROM events WHERE event_type = 'add_to_cart'
-    ),
+order_items as (
+	select * from {{ ref('stg_order_items') }}
+)
 
-checkout as (
-    SELECT *, 1 as checkout FROM events WHERE event_type = 'checkout'
-    )
+{% set event_types = dbt_utils.get_column_values(table=ref('fact_events'), column='event_type') %}
 
 SELECT
-      pv.event_id
-    , pv.session_id
-    , pv.user_id
-    , pv.page_url
-    , pv.event_created_at
-    , pv.order_id
-    , pv.product_id
-    , pv.product_name
-    , SUM(pv.page_view) as page_views
-    , SUM(ad.add_to_cart) as add_to_cart
-    , SUM(ct.checkout) as checkout
-  FROM page_views pv
-  LEFT JOIN add_to_cart ad
-    ON pv.session_id = ad.session_id
-  LEFT JOIN checkout ct
-    ON ad.session_id = ct.session_id
+      ev.session_id
+    , ev.user_id
+    , ev.page_url
+    , ev.event_created_at
+    , ev.order_id
+    , COALESCE(ev.product_id,oi.product_id) as product_id
+    {% for event_type in event_types %}
+    , {{ sum_of('ev.event_type',event_type)}} as {{event_type}}s
+    {% endfor %}
+  FROM
+    events ev
+  LEFT JOIN
+    order_items oi
+    on oi.order_id = ev.order_id
   GROUP BY
-      pv.event_id
-    , pv.session_id
-    , pv.user_id
-    , pv.page_url
-    , pv.event_created_at
-    , pv.order_id
-    , pv.product_id
-    , pv.product_name
-    
+      ev.session_id
+    , ev.user_id
+    , ev.page_url
+    , ev.event_created_at
+    , ev.order_id
+    , COALESCE(ev.product_id,oi.product_id)

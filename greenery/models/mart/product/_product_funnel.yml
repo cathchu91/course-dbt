@@ -11,12 +11,14 @@ models:
           - unique_values
       - name: session_id
         description: unique session_id for each event
+        tests:
+          - not_null
       - name: user_id
       - name: page_url
       - name: event_created_at
       - name: order_id
       - name: product_id
-      - name: product_name
       - name: page_views
       - name: add_to_cart
+      - name: package_shipped
       - name: checkout
